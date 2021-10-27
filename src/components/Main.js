@@ -18,7 +18,7 @@ return (
                     name="name"
                     onChange={handleChange}
                     value={formData.name}
-                    placeholder="Name"
+                    placeholder="Имя"
                     className="login__input login__input_email"
                     minLength="2" maxLength="30" required />
                 <input type="password"

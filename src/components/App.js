@@ -35,14 +35,20 @@ function App() {
   function handleSubmit(e) {
     e.preventDefault();
     history.push('/profile');;
-}
+  }
+
+  function buttonBack() {
+    setValidData(false);
+    setFormData({ name: '', password: '' });
+    history.push('/');
+  }
 
   return (
     <div className="page">
       <div className="page__container">
         <Switch >
           <Route exact path="/profile">
-            {validData ? <Profile /> : <Redirect to="/" />}
+            {validData ? <Profile buttonBack={buttonBack} /> : <Redirect to="/" />}
           </Route>
           <Route exact path="/">
             <Main
